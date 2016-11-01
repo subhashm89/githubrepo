@@ -1,5 +1,7 @@
 package com.asi.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Repository {
 
 	private Integer id;
@@ -7,6 +9,9 @@ public class Repository {
 	private String full_name;
 	private String html_url;
 	private Integer size;
+	@JsonProperty("private")
+	private Boolean isPrivate;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -36,6 +41,12 @@ public class Repository {
 	}
 	public void setSize(Integer size) {
 		this.size = size;
+	}
+	public Boolean getIsPrivate() {
+		return isPrivate;
+	}
+	public void setIsPrivate(Boolean isPrivate) {
+		this.isPrivate = isPrivate;
 	}
 	
 }
